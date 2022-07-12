@@ -9,7 +9,7 @@ public class Usuario {
     private String senha;
     private Perfil perfil;
     private double saldo;
-    private List<Transacao> listaTransacao;
+    private final List<Transacao> listaTransacao;
 
     public Usuario(long id, String username, String senha, Perfil perfil) {
         this.id = id;

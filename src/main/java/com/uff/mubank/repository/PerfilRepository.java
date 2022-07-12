@@ -21,9 +21,19 @@ public class PerfilRepository {
         return perfil;
     }
 
-    public Perfil buscarPorId(Long id){
-        for (Perfil perfil: this.listaPerfil){
-            if (perfil.getId() == id){
+    public Perfil buscarPorId(Long id) {
+        for (Perfil perfil : this.listaPerfil) {
+            if (perfil.getId() == id) {
+                return perfil;
+            }
+        }
+        return null;
+    }
+
+    public Perfil alterar(Long id, String nome) {
+        for (Perfil perfil : this.listaPerfil) {
+            if (perfil.getId() == id) {
+                perfil.setName(nome);
                 return perfil;
             }
         }

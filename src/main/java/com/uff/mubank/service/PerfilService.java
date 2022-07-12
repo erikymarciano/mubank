@@ -10,11 +10,15 @@ public class PerfilService {
         this.perfilRepository = new PerfilRepository();
     }
 
-    public Perfil criar(String nome){
+    public Perfil criar(String nome) {
         return perfilRepository.salvar(nome);
     }
 
-    public Perfil buscarPorId(Long id){
+    public Perfil buscarPorId(Long id) {
         return perfilRepository.buscarPorId(id);
+    }
+
+    public Perfil alterar(Long id, String nome) {
+        return perfilRepository.alterar(id, nome);
     }
 }

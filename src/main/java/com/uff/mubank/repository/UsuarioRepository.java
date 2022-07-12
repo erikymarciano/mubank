@@ -32,9 +32,19 @@ public class UsuarioRepository {
         return null;
     }
 
-    public Usuario buscarPorUsername(String username){
-        for (Usuario usuario: this.listaUsuario){
-            if (Objects.equals(usuario.getUsername(), username)){
+    public Usuario buscarPorUsername(String username) {
+        for (Usuario usuario : this.listaUsuario) {
+            if (Objects.equals(usuario.getUsername(), username)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
+
+    public Usuario alterar(long id, String senha) {
+        for (Usuario usuario : this.listaUsuario) {
+            if (usuario.getId() == id) {
+                usuario.setSenha(senha);
                 return usuario;
             }
         }
