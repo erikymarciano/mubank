@@ -28,4 +28,8 @@ public class UsuarioService {
     public Usuario alterar(long id, String senha) {
         return usuarioRepository.alterar(id, senha);
     }
+
+    public Usuario somarSaldo(long id, double valor) {
+        return usuarioRepository.somarSaldo(id, valor);
+    }
 }

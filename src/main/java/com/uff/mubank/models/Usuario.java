@@ -56,15 +56,15 @@ public class Usuario {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void somarSaldo(double saldo) {
+        this.saldo += saldo;
     }
 
     public List<Transacao> getListaTransacao() {
         return listaTransacao;
     }
 
-    public void adicionaTransacao(Transacao transacao){
+    public void adicionaTransacao(Transacao transacao) {
         listaTransacao.add(transacao);
     }
 }

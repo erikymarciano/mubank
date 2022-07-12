@@ -50,4 +50,14 @@ public class UsuarioRepository {
         }
         return null;
     }
+
+    public Usuario somarSaldo(long id, double valor) {
+        for (Usuario usuario : this.listaUsuario) {
+            if (usuario.getId() == id) {
+                usuario.somarSaldo(valor);
+                return usuario;
+            }
+        }
+        return null;
+    }
 }
