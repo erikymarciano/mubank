@@ -44,4 +44,14 @@ public class TransacaoRepository {
         }
         return null;
     }
+
+    public List<Transacao> listarTransferenciasDoUsuario(Usuario usuario) {
+        List<Transacao> listaResultado = new ArrayList<>();
+        for (Transacao transacao : this.listaTransacao) {
+            if (transacao.ehDoUsuario(usuario)) {
+                listaResultado.add(transacao);
+            }
+        }
+        return listaResultado;
+    }
 }

@@ -4,6 +4,8 @@ import com.uff.mubank.models.Transacao;
 import com.uff.mubank.models.Usuario;
 import com.uff.mubank.repository.TransacaoRepository;
 
+import java.util.List;
+
 public class TransacaoService {
     private final TransacaoRepository transacaoRepository;
     private final UsuarioService usuarioService;
@@ -37,5 +39,10 @@ public class TransacaoService {
             return transacaoRepository.salvarTransferencia(usuarioOrigem, usuarioOrigem, valor);
         }
         return null;
+    }
+
+    public List<Transacao> listarTransferenciasDoUsuario(Long idUsuario) {
+        Usuario usuario = usuarioService.buscarPorId(idUsuario);
+        return transacaoRepository.listarTransferenciasDoUsuario(usuario);
     }
 }

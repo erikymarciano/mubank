@@ -18,4 +18,9 @@ public class Transferencia extends Transacao {
     public double getValor() {
         return valor;
     }
+
+    @Override
+    public boolean ehDoUsuario(Usuario usuario) {
+        return usuario == this.destino || usuario == this.getUsuario();
+    }
 }

@@ -36,4 +36,8 @@ public abstract class Transacao {
     public void setData(Date data) {
         this.data = data;
     }
+
+    public boolean ehDoUsuario(Usuario usuario) {
+        return this.usuario == usuario;
+    }
 }

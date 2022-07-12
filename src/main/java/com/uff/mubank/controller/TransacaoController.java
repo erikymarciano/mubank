@@ -3,6 +3,8 @@ package com.uff.mubank.controller;
 import com.uff.mubank.models.Transacao;
 import com.uff.mubank.service.TransacaoService;
 
+import java.util.List;
+
 public class TransacaoController {
     private final TransacaoService transacaoService;
 
@@ -20,5 +22,9 @@ public class TransacaoController {
 
     public Transacao criarTransferencia(long idUsuarioOrigem, long idUsuarioDestino, double valor) {
         return transacaoService.criarTransferencia(idUsuarioOrigem, idUsuarioDestino, valor);
+    }
+
+    public List<Transacao> listarTransferenciasDoUsuario(long idUsuario) {
+        return transacaoService.listarTransferenciasDoUsuario(idUsuario);
     }
 }
