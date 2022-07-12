@@ -17,4 +17,8 @@ public class TransacaoController {
     public Transacao criarSaque(long idUsuario, double valor) {
         return transacaoService.criarDeposito(idUsuario, valor);
     }
+
+    public Transacao criarTransferencia(long idUsuarioOrigem, long idUsuarioDestino, double valor) {
+        return transacaoService.criarTransferencia(idUsuarioOrigem, idUsuarioDestino, valor);
+    }
 }

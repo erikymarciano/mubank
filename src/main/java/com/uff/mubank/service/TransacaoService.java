@@ -27,4 +27,15 @@ public class TransacaoService {
         }
         return null;
     }
+
+    public Transacao criarTransferencia(Long idUsuarioOrigem, Long idUsuarioDestino, double valor) {
+        Usuario usuarioOrigem = usuarioService.buscarPorId(idUsuarioOrigem);
+        Usuario usuarioDestino = usuarioService.buscarPorId(idUsuarioDestino);
+        if (usuarioOrigem.getSaldo() >= valor && usuarioDestino != null) {
+            usuarioService.somarSaldo(idUsuarioOrigem, -1 * valor);
+            usuarioService.somarSaldo(idUsuarioDestino, valor);
+            return transacaoRepository.salvarTransferencia(usuarioOrigem, usuarioOrigem, valor);
+        }
+        return null;
+    }
 }

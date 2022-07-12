@@ -1,9 +1,6 @@
 package com.uff.mubank.repository;
 
-import com.uff.mubank.models.Deposito;
-import com.uff.mubank.models.Saque;
-import com.uff.mubank.models.Transacao;
-import com.uff.mubank.models.Usuario;
+import com.uff.mubank.models.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +27,13 @@ public class TransacaoRepository {
         this.ultimoId++;
         this.listaTransacao.add(saque);
         return saque;
+    }
+
+    public Transferencia salvarTransferencia(Usuario usuarioOrigem, Usuario usuarioDestino, double valor) {
+        Transferencia transferencia = new Transferencia(usuarioOrigem, usuarioDestino, valor);
+        this.ultimoId++;
+        this.listaTransacao.add(transferencia);
+        return transferencia;
     }
 
     public Transacao buscarPorId(Long id) {
