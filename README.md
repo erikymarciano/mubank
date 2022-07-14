@@ -20,3 +20,7 @@ MuBank é um banco digital (de mentirinha!) que descomplica a vida financeira do
 - Diagramas de Sequência
 - Padrões de Projeto - Descrição de Modelagem
 - Apresentação do projeto 
+
+## Colaborações
+
+O trabalho foi feito em conjunto para a disciplina de Projeto de Software da UFF. Todas as colaborações do trabalho, estão especificadas no documento: Tarefas e Responsáveis.
